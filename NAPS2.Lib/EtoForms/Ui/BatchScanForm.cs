@@ -64,7 +64,7 @@ public class BatchScanForm : EtoDialogBase
         _batchScanPerformer = batchScanPerformer;
         _errorOutput = errorOutput;
         _singleScan = new RadioButton { Text = UiStrings.SingleScan };
-        _UseExistingImages = new RadioButton(_singleScan) { Text = UiStrings.UseExistingImages };
+        _UseExistingImages = new RadioButton(_singleScan) { Text = UiStrings.LoadFromNaps2 };
         _multipleScansPrompt = new RadioButton(_singleScan) { Text = UiStrings.MultipleScansPrompt };
         _multipleScansDelay = new RadioButton(_singleScan) { Text = UiStrings.MultipleScansDelay };
         _load = new RadioButton { Text = UiStrings.LoadIn };
@@ -193,7 +193,7 @@ public class BatchScanForm : EtoDialogBase
     {
         UpdateProfiles();
 
-        _UseExistingImages.Checked = _transactionConfig.Get(c => c.BatchSettings.ScanType) == BatchScanType.UseExistingImages;
+        _UseExistingImages.Checked = _transactionConfig.Get(c => c.BatchSettings.ScanType) == BatchScanType.loadFromNaps2;
         if (_UseExistingImages.Checked)
         {
             _load.Enabled = false;
@@ -244,7 +244,7 @@ public class BatchScanForm : EtoDialogBase
             ? BatchScanType.MultipleWithPrompt
             : _multipleScansDelay.Checked
                 ? BatchScanType.MultipleWithDelay
-                : _UseExistingImages.Checked ? BatchScanType.UseExistingImages
+                : _UseExistingImages.Checked ? BatchScanType.loadFromNaps2
                 : BatchScanType.Single);
 
 

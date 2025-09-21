@@ -1,6 +1,5 @@
 ﻿using Eto.Forms;
 using NAPS2.EtoForms;
-using NAPS2.EtoForms.Desktop;
 using NAPS2.EtoForms.Ui;
 using NAPS2.Images;
 using NAPS2.ImportExport;
@@ -138,7 +137,7 @@ public class BatchScanPerformer : IBatchScanPerformer
         {
             await Task.Run(async () =>
             {
-                if (_settings.ScanType == BatchScanType.UseExistingImages)
+                if (_settings.ScanType == BatchScanType.loadFromNaps2)
                 {
                     _scans.Add(_imageList.Images.Select(x => x.GetClonedImage()).ToList());
                 }

@@ -1213,6 +1213,15 @@ namespace NAPS2.Lang.Resources {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Load images from NAPS2.
+        /// </summary>
+        internal static string LoadFromNaps2 {
+            get {
+                return ResourceManager.GetString("LoadFromNaps2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Load images into NAPS2.
         /// </summary>
         internal static string LoadIn {
@@ -2541,15 +2550,6 @@ namespace NAPS2.Lang.Resources {
         internal static string UndoFormat {
             get {
                 return ResourceManager.GetString("UndoFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Use existing NAPS2 images.
-        /// </summary>
-        internal static string UseExistingImages {
-            get {
-                return ResourceManager.GetString("UseExistingImages", resourceCulture);
             }
         }
         
